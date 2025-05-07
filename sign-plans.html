@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Assinar</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Antiforgery Blazor Token -->
+  <meta name="csrf-token" content="@Antiforgery.GetAndStoreTokens(HttpContext).RequestToken">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body, html {
+      height: 100%;
+      /* margin: 0; */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex-grow: 1; /* This ensures the main section takes up remaining space */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body class="index-page dark-background">
+
+  <main class="main">
+    
+    <!-- Register Section -->
+    <section id="register" class="register section dark-background" style="padding: 20px; width: 100%; max-width: 725px;">
+      
+      <a class="logo d-flex justify-content-center mt-5 align-items-center" data-aos="fade-up" data-aos-delay="100">
+        <img class="d-block" style="width: 300px; margin-bottom: 25px;" src="assets/img/logo.png" alt="">
+      </a>
+
+      <div class="container flex-column justify-content-center align-items-center">
+
+        <h3 class="text-center" data-aos="fade-up" data-aos-delay="200">Registre-se</h3>
+        
+        <div class="progress" style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="300">
+          <div id="progress-bar" class="progress-bar" style="width: 100%; background-color: #7e6fff;"></div>
+        </div>
+      
+      </div>
+
+      <div id="step-4" class="step php-email-form" data-aos="fade-up" data-aos-delay="350">
+        <h3 class="text-center" data-aos="fade-up" data-aos-delay="325">Selecione um plano</h3>
+
+        <div id="loading-spinner" class="text-center my-5">
+          <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Carregando...</span>
+          </div>
+        </div>
+
+        <!-- Available Plans -->
+        <div class="row gy-4 dark-background text-center mt-3 mb-3" id="plans-container">
+          <!-- Plans will be dynamically inserted here -->
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /Register Section -->
+    
+    <div style="padding: 20px; width: 100%; max-width: 725px;" data-aos="fade-up" data-aos-delay="500">
+      <p class="text-center mt-3">
+          Ao <strong>testar</strong> ou <strong>assinar</strong>, você aceita os
+          <a href="terms-of-service" target="_blank">Termos de Serviço</a>,
+          os
+          <a href="terms-of-use" target="_blank">Termos de Uso</a> e
+          a
+          <a href="privacy-policy" target="_blank">Política de Privacidade</a>.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", async function () {
+      const loadingSpinner = document.getElementById("loading-spinner");
+      const plansContainer = document.getElementById("plans-container");
+
+      try {
+        const plans = await getPlans();
+
+        if (!plans || plans.length === 0) {
+            plansContainer.innerHTML = '<p class="text-center text-light">Nenhum plano disponível no momento.</p>';
+            return;
+        }
+
+        plans.forEach((plan) => {
+            const planCard = document.createElement("div");
+            planCard.className = "col-12 col-sm-6 col-md-4 col-lg-6 mb-4";
+            planCard.innerHTML = `
+              <div class="card bg-dark text-light shadow-lg rounded-lg pt-3 pb-2 plan-card h-100" data-plan="${plan.name}">
+                <div class="card-header text-center bg-dark border-0">
+                    <h5>${plan.name}</h5>
+                </div>
+                <div class="card-body text-center">
+                    <h3>${plan.price}</h3>
+                    <h5 class="text-secondary">/Mês</h5>
+                    <ul class="list-unstyled mt-3 text-start px-4">
+                        <li>&#10003; ${plan.maxUsers}</li>
+                        <li>&#10003; ${plan.maxStorage}</li>
+                        <li>&#10003; ${plan.features}</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center border-0">
+                  <a 
+                    class="btn btn-primary"
+                    style="width: 88%; background-color: #7e6fff; border-color: #7e6fff; padding: 9px; font-weight: bold;"
+                    href="${plan.isFree ? `#` : plan.redirect}"
+                    onclick="handleClick(event, '${plan.redirect}', ${plan.isFree})"
+                  >
+                    ${!plan.isFree ? `Assinar` : `Testar`}
+                  </a>
+                </div>
+              </div>
+            `;
+            plansContainer.appendChild(planCard);
+        });
+      } catch (err) {
+        console.error(err);
+      } finally {
+        loadingSpinner.style.display = "none";
+      }
+    });
+  
+    async function getPlans() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const userName = urlParams.get('username') || "";
+
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+      try {
+        const response = await fetch(`https://portal.endoflow.app//api/Register/Plans/${userName}`, {
+          method: "GET",
+          headers: { 
+            "Content-Type": "application/json" ,
+            "RequestVerificationToken": csrfToken // Include the CSRF token
+          },
+          credentials: 'include',
+        });
+
+        if (!response.ok) {
+          window.location.href = "http://localhost:999/register.html";
+          return;
+        }
+
+        const responseText = await response.text();
+        return JSON.parse(responseText);
+      } catch (error) {
+        console.error("Fetch error:", error);
+        // window.location.href = "http://localhost:999/register.html";
+      }
+    }
+
+    function handleClick(event, redirectUrl, isFree) {
+      event.preventDefault();
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const userName = urlParams.get('username');
+  
+      if (isFree) {
+        window.location.href = `http://localhost:999/being-validated.html?username=${userName}`;
+        return;
+      }
+      
+      window.location.href = redirectUrl;
+    }
+
+  </script>  
+
+</body>
+
+</html>

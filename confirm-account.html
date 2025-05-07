@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Confirme sua conta</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Antiforgery Blazor Token -->
+  <meta name="csrf-token" content="@Antiforgery.GetAndStoreTokens(HttpContext).RequestToken">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body, html {
+      height: 100%;
+      /* margin: 0; */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex-grow: 1; /* This ensures the main section takes up remaining space */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body class="index-page dark-background">
+
+  <main class="main">
+    
+    <!-- Register Section -->
+    <section id="register" class="register section dark-background" style="padding: 20px; width: 100%; max-width: 725px;">
+      
+      <a class="logo d-flex justify-content-center mt-5 align-items-center" data-aos="fade-up" data-aos-delay="100">
+        <img class="d-block" style="width: 300px; margin-bottom: 25px;" src="assets/img/logo.png" alt="">
+      </a>
+
+      <div class="container flex-column justify-content-center align-items-center">
+
+        <h3 class="text-center" data-aos="fade-up" data-aos-delay="200">Registre-se</h3>
+        
+        <div class="progress" style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="300">
+          <div id="progress-bar" class="progress-bar" style="width: 80%; background-color: #7e6fff;"></div>
+        </div>
+      
+        <div id="step-4" class="step php-email-form">
+          <h3 class="text-center" data-aos="fade-up" data-aos-delay="400">Confirme sua conta</h3>
+          <p class="text-center" data-aos="fade-up" data-aos-delay="450">Um código foi enviado para o seu e-mail, verifique a caixa de entrada</p>
+          <input type="text" id="code" class="form-control mb-3" placeholder="Código de verificação*" required data-aos="fade-up" data-aos-delay="500">
+          
+          <div class="text-danger mb-3" id="registerError"></div>
+          <div class="loading">Loading</div>
+
+          <button id="registerbutton" class="btn btn-primary w-100" style="background-color: #7e6fff;" onclick="validate()" data-aos="fade-up" data-aos-delay="550">Validar</button>
+          
+          <p class="text-center mt-2" data-aos="fade-up" data-aos-delay="600">Caso não encontre o código verifique também a caixa de span.</p>
+
+          <p class="text-center mt-3" data-aos="fade-up" data-aos-delay="650">
+            Não recebeu o código? 
+            <button id="resendButton" type="button" class="btn btn-link p-0" style="color: #7e6fff; text-decoration: underline;" onclick="resendCode()">Reenviar código</button>
+          </p>
+          
+          <div class="text-success mt-2 text-center" id="resendSuccess"></div>
+          <div class="text-danger mt-2 text-center" id="resendError"></div>
+        </div>
+      
+      </div>
+
+    </section>
+    <!-- /Register Section -->
+    
+    <div style="padding: 20px; width: 100%; max-width: 725px;" data-aos="fade-up" data-aos-delay="600">
+      <p class="text-center">
+          Ao se <strong>registrar</strong>, você aceita os
+          <a href="terms-of-service" target="_blank">Termos de Serviço</a>,
+          os
+          <a href="terms-of-use" target="_blank">Termos de Uso</a> e
+          a
+          <a href="privacy-policy" target="_blank">Política de Privacidade</a>.
+      </p>
+    </div>
+
+    <!-- Divider Section -->
+    <section id="" class="dark-background" style="padding: 1px;">
+
+      <hr class="custom-divider">
+
+    </section>
+    <!-- /Divider Section -->
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- CNPJ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+  <script>
+    
+    async function validate() {
+      const currentStepDiv = document.getElementById("step-4");
+      const inputs = currentStepDiv.querySelectorAll("input[required]");
+
+      let isValid = true;
+      
+      inputs.forEach(input => {
+        const value = input.value.trim();
+
+        // Check if required fields are empty
+        if (!value) {
+          isValid = false;
+          input.classList.add("is-invalid");
+        } else {
+          input.classList.remove("is-invalid");
+        }
+      });
+
+      if (!isValid) return;
+
+      await doRequest()
+    }
+
+    async function doRequest() {
+      document.querySelector(".loading").style.display = "block";
+
+      const button = document.getElementById("registerbutton");
+      button.disabled = true;
+      button.textContent = "Aguarde...";
+
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const userName = urlParams.get('username');
+      const code = document.getElementById("code").value;
+
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+      try {
+        const response = await fetch("https://portal.endoflow.app/api/ConfirmAccount", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "RequestVerificationToken": csrfToken // Include the CSRF token
+          },
+          body: JSON.stringify({ 
+            userName, 
+            code
+          }),
+          credentials: "include"
+        });
+
+        const responseText = await response.text();
+      
+        if (response.status === 200) {
+          window.location.href = `http://localhost:999/sign-plans.html?username=${userName}`;
+        } else {
+          document.getElementById("registerError").textContent = responseText;
+        }
+      } catch {
+        document.getElementById("registerError").textContent = "Erro ao processar requisição.";
+      } finally {
+        document.querySelector(".loading").style.display = "none";
+        button.disabled = false;
+        button.textContent = "Validar";
+      }
+    }
+
+    async function resendCode() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const userName = urlParams.get('username');
+
+      if (!userName) {
+        document.getElementById("resendError").textContent = "Nome de usuário não encontrado na URL.";
+        return;
+      }
+
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+      const resendButton = document.getElementById("resendButton");
+      resendButton.disabled = true;
+      resendButton.textContent = "Reenviando...";
+
+      document.getElementById("resendSuccess").textContent = "";
+      document.getElementById("resendError").textContent = "";
+
+      try {
+        const response = await fetch(`https://portal.endoflow.app/api/ConfirmAccount/ResendCode/${userName}`, {
+          method: "POST",
+          headers: {
+            "RequestVerificationToken": csrfToken
+          },
+          credentials: "include"
+        });
+
+        if (response.status === 200) {
+          document.getElementById("resendSuccess").textContent = "Código reenviado com sucesso! Verifique sua caixa de entrada.";
+        } else {
+          const errorText = await response.text();
+          document.getElementById("resendError").textContent = errorText || "Erro ao reenviar código.";
+        }
+      } catch {
+        document.getElementById("resendError").textContent = "Erro inesperado ao tentar reenviar o código.";
+      } finally {
+        resendButton.disabled = false;
+        resendButton.textContent = "Reenviar código";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
