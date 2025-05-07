@@ -169,7 +169,7 @@
           window.location.href = "https://portal.endoflow.app/company";
         } else if (response.status === 422) {
           // Company not validated yet – show waiting page
-          window.location.href = result.redirectUrl || `http://localhost:999/being-validated.html?username=${userName}`;
+          window.location.href = result.redirectUrl || `https://endoflow.app/being-validated.html?username=${userName}`;
         } else if (response.status === 401) {
           // Unauthorized access (e.g. not admin or invalid credentials)
           document.getElementById("loginError").textContent = result.message || "Acesso não autorizado.";

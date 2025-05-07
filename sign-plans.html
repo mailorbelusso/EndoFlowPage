@@ -184,7 +184,7 @@
         });
 
         if (!response.ok) {
-          window.location.href = "http://localhost:999/register.html";
+          window.location.href = "https://endoflow.app/register.html";
           return;
         }
 
@@ -192,7 +192,7 @@
         return JSON.parse(responseText);
       } catch (error) {
         console.error("Fetch error:", error);
-        // window.location.href = "http://localhost:999/register.html";
+        // window.location.href = "https://endoflow.app/register.html";
       }
     }
 
@@ -203,7 +203,7 @@
       const userName = urlParams.get('username');
   
       if (isFree) {
-        window.location.href = `http://localhost:999/being-validated.html?username=${userName}`;
+        window.location.href = `https://endoflow.app/being-validated.html?username=${userName}`;
         return;
       }
       

@@ -195,7 +195,7 @@
         const responseText = await response.text();
       
         if (response.status === 200) {
-          window.location.href = `http://localhost:999/sign-plans.html?username=${userName}`;
+          window.location.href = `https://endoflow.app/sign-plans.html?username=${userName}`;
         } else {
           document.getElementById("registerError").textContent = responseText;
         }
