@@ -152,7 +152,7 @@
         const userName = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        const response = await fetch("https://portal.endoflow.app/api/Login", {
+        const response = await fetch("https://portal.endoflow.com.br/api/Login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -166,10 +166,10 @@
 
         if (response.status === 200) {
           // Login successful
-          window.location.href = "https://portal.endoflow.app/company";
+          window.location.href = "https://portal.endoflow.com.br/company";
         } else if (response.status === 422) {
           // Company not validated yet – show waiting page
-          window.location.href = result.redirectUrl || `https://endoflow.app/being-validated.html?username=${userName}`;
+          window.location.href = result.redirectUrl || `https://endoflow.com.br/being-validated.html?username=${userName}`;
         } else if (response.status === 401) {
           // Unauthorized access (e.g. not admin or invalid credentials)
           document.getElementById("loginError").textContent = result.message || "Acesso não autorizado.";

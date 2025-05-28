@@ -174,7 +174,7 @@
       const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 
       try {
-        const response = await fetch(`https://portal.endoflow.app//api/Register/Plans/${userName}`, {
+        const response = await fetch(`https://portal.endoflow.com.br/api/Register/Plans/${userName}`, {
           method: "GET",
           headers: { 
             "Content-Type": "application/json" ,
@@ -184,7 +184,7 @@
         });
 
         if (!response.ok) {
-          window.location.href = "https://endoflow.app/register.html";
+          window.location.href = "https://endoflow.com.br/register.html";
           return;
         }
 
@@ -192,7 +192,7 @@
         return JSON.parse(responseText);
       } catch (error) {
         console.error("Fetch error:", error);
-        // window.location.href = "https://endoflow.app/register.html";
+        // window.location.href = "https://endoflow.com.br/register.html";
       }
     }
 
@@ -203,7 +203,7 @@
       const userName = urlParams.get('username');
   
       if (isFree) {
-        window.location.href = `https://endoflow.app/being-validated.html?username=${userName}`;
+        window.location.href = `https://endoflow.com.br/being-validated.html?username=${userName}`;
         return;
       }
       

@@ -179,7 +179,7 @@
       const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 
       try {
-        const response = await fetch("https://portal.endoflow.app/api/ConfirmAccount", {
+        const response = await fetch("https://portal.endoflow.com.br/api/ConfirmAccount", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -195,7 +195,7 @@
         const responseText = await response.text();
       
         if (response.status === 200) {
-          window.location.href = `https://endoflow.app/sign-plans.html?username=${userName}`;
+          window.location.href = `https://endoflow.com.br/sign-plans.html?username=${userName}`;
         } else {
           document.getElementById("registerError").textContent = responseText;
         }
@@ -227,7 +227,7 @@
       document.getElementById("resendError").textContent = "";
 
       try {
-        const response = await fetch(`https://portal.endoflow.app/api/ConfirmAccount/ResendCode/${userName}`, {
+        const response = await fetch(`https://portal.endoflow.com.br/api/ConfirmAccount/ResendCode/${userName}`, {
           method: "POST",
           headers: {
             "RequestVerificationToken": csrfToken
