@@ -773,7 +773,7 @@
           </div>
 
           <div class="col-lg-8">
-            <form id="contactForm" action="https://portal.endoflow.com.br/api/Contact" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -781,15 +781,15 @@
                 </div>
 
                 <div class="col-md-6">
-                  <input type="email" id="email" class="form-control" name="email" placeholder="Seu email" required="">
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Seu email" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" id="subject" class="form-control" name="subject" placeholder="Assunto" required="">
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Assunto" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" id="message" name="message" rows="6" placeholder="Mensagem" required=""></textarea>
+                  <textarea id="message" name="message" class="form-control" rows="6" placeholder="Mensagem" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -797,7 +797,7 @@
                   <div class="sent-message" style="display: none; color: #28a745;">Sua mensagem foi enviada com sucesso!</div>
                   <div class="error-message" style="display: none; color: #dc3545;">Erro ao enviar. Tente novamente.</div>
 
-                  <button style="color: white;" type="submit">Enviar mensagem</button>
+                  <button style="color: white;" type="button" id="submitBtn">Enviar mensagem</button>
                 </div>
 
               </div>
@@ -887,19 +887,8 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the default form submission
+    document.getElementById("submitBtn").addEventListener("click", function () {
 
-      // Get form action URL dynamically
-      const form = event.target;
-      const actionUrl = form.getAttribute("action");
-
-      if (!actionUrl) {
-        console.error("The form action property is not set!");
-        return;
-      }
-
-      // Collect form data
       const formDataObject = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
@@ -911,7 +900,7 @@
       document.querySelector(".loading").style.display = "block";
 
       // Use fetch to send data to the endpoint
-      fetch(actionUrl, {
+      fetch("https://portal.endoflow.com.br/api/Contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
