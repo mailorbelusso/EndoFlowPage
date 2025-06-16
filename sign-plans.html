@@ -134,27 +134,27 @@
             const planCard = document.createElement("div");
             planCard.className = "col-12 col-sm-6 col-md-4 col-lg-6 mb-4";
             planCard.innerHTML = `
-              <div class="card bg-dark text-light shadow-lg rounded-lg pt-3 pb-2 plan-card h-100" data-plan="${plan.name}">
+              <div class="card bg-dark text-light shadow-lg rounded-lg pt-3 pb-2 plan-card h-100" data-plan="${plan.Name}">
                 <div class="card-header text-center bg-dark border-0">
-                    <h5>${plan.name}</h5>
+                    <h5>${plan.Name}</h5>
                 </div>
                 <div class="card-body text-center">
-                    <h3>${plan.price}</h3>
+                    <h3>${plan.Price}</h3>
                     <h5 class="text-secondary">/Mês</h5>
                     <ul class="list-unstyled mt-3 text-start px-4">
-                        <li>&#10003; ${plan.maxUsers}</li>
-                        <li>&#10003; ${plan.maxStorage}</li>
-                        <li>&#10003; ${plan.features}</li>
+                        <li>&#10003; ${plan.MaxUsers}</li>
+                        <li>&#10003; ${plan.MaxStorage}</li>
+                        <li>&#10003; ${plan.Features}</li>
                     </ul>
                 </div>
                 <div class="card-footer text-center border-0">
                   <a 
                     class="btn btn-primary"
                     style="width: 88%; background-color: #7e6fff; border-color: #7e6fff; padding: 9px; font-weight: bold;"
-                    href="${plan.isFree ? `#` : plan.redirect}"
-                    onclick="handleClick(event, '${plan.redirect}', ${plan.isFree})"
+                    href="${plan.IsFree ? `#` : plan.Redirect}"
+                    onclick="handleClick(event, '${plan.Redirect}', ${plan.IsFree})"
                   >
-                    ${!plan.isFree ? `Assinar` : `Testar`}
+                    ${!plan.IsFree ? `Assinar` : `Testar`}
                   </a>
                 </div>
               </div>
