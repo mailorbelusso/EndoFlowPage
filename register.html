@@ -309,19 +309,19 @@
             "RequestVerificationToken": csrfToken // Include the CSRF token
           },
           body: JSON.stringify({ 
-            userName, 
-            email, 
-            password, 
-            name, 
-            cnpj, 
-            contactNumber, 
-            zipCode, 
-            address, 
-            addressNumber, 
-            district, 
-            city, 
-            state, 
-            country 
+            UserName: userName, 
+            Email: email, 
+            Password: password, 
+            Name: name, 
+            Cnpj: cnpj, 
+            ContactNumber: contactNumber, 
+            ZipCode: zipCode, 
+            Address: address, 
+            AddressNumber: addressNumber, 
+            District: district, 
+            City: city, 
+            State: state, 
+            Country: country 
           }),
         });
 
