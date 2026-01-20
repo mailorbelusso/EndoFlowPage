@@ -19,7 +19,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +34,8 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    body, html {
+    body,
+    html {
       height: 100%;
       /* margin: 0; */
       display: flex;
@@ -40,7 +43,8 @@
     }
 
     .main {
-      flex-grow: 1; /* This ensures the main section takes up remaining space */
+      flex-grow: 1;
+      /* This ensures the main section takes up remaining space */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -53,103 +57,110 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M64TSL6VJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-6M64TSL6VJ');
 </script>
 
-<body class="index-page dark-background">
+<body class="index-page auth-page">
 
   <main class="main">
-    
-    <!-- Register Section -->
-    <section id="register" class="register section dark-background" style="padding: 5px; width: 100%; max-width: 725px;">
-      
-      <a class="logo d-flex justify-content-center mt-5 align-items-center" data-aos="fade-up" data-aos-delay="100">
-        <img class="d-block" style="width: 300px; margin-bottom: 25px;" src="assets/img/logo.png" alt="">
-      </a>
 
-      <div class="container flex-column justify-content-center align-items-center">
+    <div class="auth-wrap">
 
-        <h3 class="text-center" data-aos="fade-up" data-aos-delay="200">Registre-se</h3>
-        
-        <div class="progress" style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="300">
-          <div id="progress-bar" class="progress-bar" style="width: 20%; background-color: #7e6fff;"></div>
+  <div class="auth-card" data-aos="fade-up" data-aos-delay="100">
+
+    <a class="logo d-flex justify-content-center auth-logo">
+      <img class="d-block" src="assets/img/logo.png" alt="">
+    </a>
+
+    <br>
+
+    <h3 class="text-center auth-title">Registre-se</h3>
+
+    <div class="progress auth-progress">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+
+    <div class="container flex-column justify-content-center align-items-center px-0">
+
+      <div id="step-1" class="step php-email-form">
+        <h3 class="text-center mb-3 auth-step-title">Identifique a companhia</h3>
+        <input type="text" id="name" class="form-control mb-2" placeholder="Nome da empresa*" required>
+        <input type="text" id="cnpj" class="form-control mb-2" placeholder="CNPJ*" required>
+        <input type="text" id="phone" class="form-control mb-3" placeholder="Telefone de contato*" required>
+        <!-- <a class="btn btn-secondary w-100 mb-2" href="/">Voltar</a> -->
+        <div class="auth-actions">
+          <button class="btn btn-endoflow w-100" onclick="nextStep(2)">Próximo</button>
         </div>
-      
-        <div id="step-1" class="step php-email-form" data-aos="fade-up" data-aos-delay="350">
-          <h3 class="text-center mb-3" data-aos="fade-up" data-aos-delay="325">Identifique a companhia</h3>
-          <input type="text" id="name" class="form-control mb-2" placeholder="Nome da empresa*" required>
-          <input type="text" id="cnpj" class="form-control mb-2" placeholder="CNPJ*" required>
-          <input type="text" id="phone" class="form-control mb-3" placeholder="Telefone de contato*" required>
-          <button class="btn btn-primary w-100" style="background-color: #7e6fff;" onclick="nextStep(2)" data-aos="fade-up" data-aos-delay="400">Próximo</button>
-        </div>
-
-        <div id="step-2" class="step php-email-form" style="display: none;" data-aos="fade-up" data-aos-delay="350">
-          <h3 class="text-center mb-3" data-aos="fade-up" data-aos-delay="325">Identifique o endereço</h3>
-          <input type="text" id="zipcode" class="form-control mb-2" placeholder="CEP*" required>
-          <input type="text" id="address" class="form-control mb-2" placeholder="Endereço*" required>
-          <input type="text" id="addressnumber" class="form-control mb-2" placeholder="Número" required>
-          <input type="text" id="district" class="form-control mb-2" placeholder="Bairro*" required>
-          <input type="text" id="city" class="form-control mb-2" placeholder="Cidade*" required>
-          <input type="text" id="state" class="form-control mb-2" placeholder="Estado*" required>
-          <input type="text" id="country" class="form-control mb-3" placeholder="País" required>
-          
-          <div class="d-flex justify-content-between flex-column">
-            <button class="btn btn-secondary w-100" style="margin-bottom: 5px;" onclick="prevStep(1)">Voltar</button>
-            <button class="btn btn-primary w-100" style="background-color: #7e6fff;" onclick="nextStep(3)" data-aos="fade-up" data-aos-delay="400">Próximo</button>
-          </div>
-        </div>
-
-        <div id="step-3" class="step php-email-form" style="display: none;" data-aos="fade-up" data-aos-delay="350">
-          <h3 class="text-center mb-3" data-aos="fade-up" data-aos-delay="325">Identifique o administrador</h3>
-          <input type="text" id="username" class="form-control mb-2" placeholder="Username*" required>
-          <input type="email" id="email" class="form-control mb-2" placeholder="Email*" required>
-          <input type="password" id="password" class="form-control mb-2" placeholder="Senha*" required>
-          <input type="password" class="form-control mb-3" placeholder="Confirme a senha*" required>
-          <div class="text-danger mb-3" id="registerError"></div>
-
-          <p class="text-center" data-aos="fade-up" data-aos-delay="450">Este será o primeiro usuário administrador do sistema.</p>
-
-          <div class="d-flex justify-content-between flex-column">
-            <div class="loading">Loading</div>
-
-            <button class="btn btn-secondary w-100" style="margin-bottom: 5px;" onclick="prevStep(2)">Voltar</button>
-            <button id="registerbutton" class="btn btn-primary w-100" style="background-color: #7e6fff;" onclick="nextStep(4)">Registre-se</button>
-          </div>
-        </div>
-      
       </div>
 
-    </section>
-    <!-- /Register Section -->
-    
+      <div id="step-2" class="step php-email-form" style="display:none;">
+        <h3 class="text-center mb-3 auth-step-title">Identifique o endereço</h3>
+        <input type="text" id="zipcode" class="form-control mb-2" placeholder="CEP*" required>
+        <input type="text" id="address" class="form-control mb-2" placeholder="Endereço*" required>
+        <input type="text" id="addressnumber" class="form-control mb-2" placeholder="Número" required>
+        <input type="text" id="district" class="form-control mb-2" placeholder="Bairro*" required>
+        <input type="text" id="city" class="form-control mb-2" placeholder="Cidade*" required>
+        <input type="text" id="state" class="form-control mb-2" placeholder="Estado*" required>
+        <input type="text" id="country" class="form-control mb-3" placeholder="País" required>
+
+        <div class="auth-actions">
+          <button class="btn btn-endoflow-outline w-100" onclick="prevStep(1)">Voltar</button>
+          <button class="btn btn-endoflow w-100" onclick="nextStep(3)">Próximo</button>
+        </div>
+      </div>
+
+      <div id="step-3" class="step php-email-form" style="display:none;">
+        <h3 class="text-center mb-3 auth-step-title">Identifique o administrador</h3>
+        <input type="text" id="username" class="form-control mb-2" placeholder="Username*" required>
+        <input type="email" id="email" class="form-control mb-2" placeholder="Email*" required>
+        <input type="password" id="password" class="form-control mb-2" placeholder="Senha*" required>
+        <input type="password" class="form-control mb-3" placeholder="Confirme a senha*" required>
+        <div class="text-danger mb-3" id="registerError"></div>
+
+        <p class="text-center auth-hint">Este será o primeiro usuário administrador do sistema.</p>
+
+        <div class="auth-actions">
+          <div class="loading">Loading</div>
+          <button class="btn btn-endoflow-outline w-100" onclick="prevStep(2)">Voltar</button>
+          <button id="registerbutton" class="btn btn-endoflow w-100" onclick="nextStep(4)">Registre-se</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
     <div style="width: 100%; max-width: 725px;" data-aos="fade-up" data-aos-delay="500">
       <p class="text-center">
-          Ao se <strong>registrar</strong>, você aceita os
-          <a href="terms-of-service" target="_blank">Termos de Serviço</a>,
-          os
-          <a href="terms-of-use" target="_blank">Termos de Uso</a> e
-          a
-          <a href="privacy-policy" target="_blank">Política de Privacidade</a>.
+        Ao se <strong>registrar</strong>, você aceita os
+        <a href="terms-of-service" target="_blank">Termos de Serviço</a>,
+        os
+        <a href="terms-of-use" target="_blank">Termos de Uso</a> e
+        a
+        <a href="privacy-policy" target="_blank">Política de Privacidade</a>.
       </p>
     </div>
 
     <div style="width: 100%; max-width: 725px;" data-aos="fade-up" data-aos-delay="600">
       <p class="text-center mt-3">
-          Já tem uma conta?
-          <a href="https://portal.endoflow.com.br/Account/Login"><strong>Faça login</strong></a>
+        Já tem uma conta?
+        <a href="https://portal.endoflow.com.br/Account/Login"><strong>Faça login</strong></a>
       </p>
     </div>
 
   </main>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -268,7 +279,7 @@
       if (step == 4) {
         await signIn();
         return;
-      } 
+      }
 
       // Hide current step and show the next one
       currentStepDiv.style.display = "none";
@@ -318,25 +329,25 @@
             "Content-Type": "application/json",
             "RequestVerificationToken": csrfToken // Include the CSRF token
           },
-          body: JSON.stringify({ 
-            UserName: userName, 
-            Email: email, 
-            Password: password, 
-            Name: name, 
-            Cnpj: cnpj, 
-            ContactNumber: contactNumber, 
-            ZipCode: zipCode, 
-            Address: address, 
-            AddressNumber: addressNumber, 
-            District: district, 
-            City: city, 
-            State: state, 
-            Country: country 
+          body: JSON.stringify({
+            UserName: userName,
+            Email: email,
+            Password: password,
+            Name: name,
+            Cnpj: cnpj,
+            ContactNumber: contactNumber,
+            ZipCode: zipCode,
+            Address: address,
+            AddressNumber: addressNumber,
+            District: district,
+            City: city,
+            State: state,
+            Country: country
           }),
         });
 
         const responseText = await response.text();
-      
+
         if (response.status === 200) {
           window.location.href = `https://endoflow.com.br/confirm-account.html?username=${userName}`;
         } else {

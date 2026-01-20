@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>EndoFlow</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="theme-color" content="#0b071a" />
-
-  <!-- Antiforgery Blazor Token -->
-  <meta name="csrf-token" content="@Antiforgery.GetAndStoreTokens(HttpContext).RequestToken">
+  <meta name="description"
+    content="EndoFlow: plataforma moderna de comunicação interna, cultura e engajamento — com feed, chat e motor de engajamento para equipes operacionais e administrativas.">
+  <meta name="keywords"
+    content="comunicação interna, endomarketing, engajamento, cultura organizacional, NR-1, ESG, feed corporativo, chat corporativo, SaaS">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -19,909 +17,564 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6M64TSL6VJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6M64TSL6VJ');
-</script>
-
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "tejbmuxkwk");
-</script>
 
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="assets/img/logo.png" alt="">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/Logo&EscritaRoxo5NoBackground.png" alt="">
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#home" class="active">Home<br></a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#features">Benefícios</a></li>
-          <li><a href="#services">Plataforma</a></li>
-          <!-- <li><a href="#team">Equipe</a></li> -->
+          <li><a href="#hero" class="active">Início</a></li>
+          <li><a href="#features">Produto</a></li>
           <li><a href="#pricing">Planos</a></li>
           <li><a href="#contact">Contato</a></li>
+
+          <li class="nav-login">
+            <a class="btn-nav-login" href="https://portal.endoflow.com.br/">Entrar</a>
+          </li>
+
+          <li class="nav-cta">
+            <a class="btn-nav-cta" href="https://endoflow.com.br/register.html">Começar grátis</a>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      
-      <a href="https://portal.endoflow.com.br/" class="btn-getstarted">Entrar</a>
 
     </div>
   </header>
 
   <main class="main">
 
-    <!-- Home Section -->
-    <section id="home" class="home section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-
+    <!-- Hero Section -->
+    <section id="hero" class="hero section hero-light">
       <div class="container">
-
-        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-xl-8 col-lg-12">
-            <h2>Onde pessoas se conectam. Onde empresas crescem.</h2>
-            <p>Transformamos comunicação em cultura. E cultura em resultados.</p>
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-6 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="Prévia da plataforma EndoFlow">
           </div>
-        </div>
 
-        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <i class="bi bi-link"></i> <!-- Conexão Total com a Missão -->
-              <h3>Conexão Total com a Missão</h3>
-              <p>Alinhe todos os colaboradores à missão da empresa, promovendo um ambiente de pertencimento.</p>
+          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+
+            <h1 class="hero-title">A plataforma completa para <span>Comunicação</span> & <span>Cultura</span> da sua
+              empresa</h1>
+            <br>
+            <p class="hero-subtitle">Transforme a comunicação interna em uma cultura de resultados. Conecte sua equipe,
+              <b>eleve a
+                produtividade, retenha talentos e fortaleça o engajamento</b>.
+            </p>
+            <div class="hero-cta d-flex align-items-center gap-3">
+              <a href="#pricing" class="btn-get-started">Começar gratuitamente</a>
+              <a href="#contact" class="btn-watch-video d-flex align-items-center"><i
+                  class="bi bi-play-circle"></i><span>Agende uma demonstração</span></a>
             </div>
           </div>
-          <div class="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon-box">
-              <i class="bi bi-chat-dots"></i> <!-- Engajamento Real e Contínuo -->
-              <h3>Engajamento Real e Contínuo</h3>
-              <p>Comunique-se diretamente com sua equipe, mantendo o engajamento constante.</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon-box">
-              <i class="bi bi-star"></i> <!-- Reconhecimento e Valorização -->
-              <h3>Reconhecimento e Valorização</h3>
-              <p>Promova o reconhecimento contínuo das conquistas de sua equipe, criando um ciclo de motivação.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center" style="margin-top: 50px;" data-aos="fade-up" data-aos-delay="600">
-          
-          <h3>Revolucione a comunicação com EndoFlow:</h3>
-
-          <button class="subscribe-button" onclick="location.href='#pricing'">Assine agora</button>
-
-          <p style="color: #999999; font-size: 18px;">Experimente por 30 dias gratuitamente</p>
 
         </div>
-
       </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
 
     </section>
-    <!-- /Home Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section dark-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-    
-        <div class="row gy-4">
-          <!-- Imagem ou Vídeo -->
-          <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="Imagem do EndoFlow">
-          </div>
-          
-          <!-- Conteúdo -->
-          <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Definição de EndoFlow</h3>
-            <p class="fst-italic">
-              O EndoFlow é uma plataforma inovadora que fortalece a comunicação interna ao conectar sua equipe à missão da empresa, promovendo uma cultura de engajamento e pertencimento.
-            </p>
-            
-            <ul>
-              <li><i class="bi bi-check2-all"></i> <span>Conexão direta com a missão e os valores da empresa.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Engajamento contínuo e reconhecimento de esforços.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Promover uma comunicação transparente e eficaz.</span></li>
-            </ul>
-            
-            <p>
-              Mais do que uma ferramenta digital, o EndoFlow é um parceiro estratégico na construção de uma cultura organizacional forte, onde cada colaborador se sente parte do sucesso coletivo. Juntos, vamos transformar sua empresa em um ambiente mais motivado, colaborativo e produtivo.
-            </p>
-
-            <p>
-              Ao implementar o EndoFlow, sua empresa fortalece a comunicação interna e desperta um novo compromisso dos colaboradores com os objetivos organizacionais. O resultado é uma equipe mais alinhada, engajada e focada no crescimento mútuo.
-            </p>
-          </div>
-        </div>
-    
-      </div>
-    
-    </section>    
-    <!-- /About Section -->
-
-    <!-- Clients Section -->
-    <!-- <section id="clients" class="clients section dark-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section> -->
-    <!-- /Clients Section -->
-
-    <!-- Divider Section -->
-    <section id="" class="dark-background" style="padding: 1px;">
-      
-      <hr class="custom-divider">
-
-    </section>
-    <!-- /Divider Section -->
+    <!-- /Hero Section -->
 
     <!-- Features Section -->
-    <section id="features" class="features section dark-background">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Benefícios reais</h2>
-        <p>Resultados visíveis</p>
-      </div>
-      <!-- End Section Title -->
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
 
-      <div class="container">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/features-bg.jpg" alt=""></div>
-          <div class="col-lg-6">
 
-            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-graph-up-arrow flex-shrink-0"></i>
-              <div>
-                <h4>Engajamento que se traduz em resultado</h4>
-                <p>EndoFlow cria um canal direto entre liderança e equipe, gerando mais alinhamento, energia e produtividade no dia a dia. Times engajados entregam mais — e ficam por mais tempo.</p>
-              </div>
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center stats-item-macro">
+            <i class="bi bi-chat-dots"></i>
+            <div class="stats-item">
+              <h3 class="stat-value">
+                <span class="stat-prefix">+</span>
+                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <span class="stat-suffix">x</span>
+              </h3>
+              <p>Comunicação assertiva</p>
             </div>
-            <!-- End Features Item-->
-            
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-person-check flex-shrink-0"></i>
-              <div>
-                <h4>Cultura organizacional forte e viva</h4>
-                <p>Transforme valores em prática. Com EndoFlow, cada colaborador entende o propósito da empresa — e se sente parte dele. Cultura não é discurso: é vivência.</p>
-              </div>
-            </div>
-            <!-- End Features Item-->
-            
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-graph-down-arrow flex-shrink-0"></i>
-              <div>
-                <h4>Redução real do turnover</h4>
-                <p>Colaboradores reconhecidos, ouvidos e conectados à missão não procuram outra empresa. EndoFlow reduz a rotatividade porque aumenta o sentido de pertencimento — e isso retém talentos.</p>
-              </div>
-            </div>
-            <!-- End Features Item-->
-            
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-heart flex-shrink-0"></i>
-              <div>
-                <h4>Mais bem-estar, menos ruído</h4>
-                <p>Ambientes saudáveis começam com comunicação clara e respeito mútuo. EndoFlow melhora o clima interno, reduz tensões e valoriza quem faz a empresa acontecer.</p>
-              </div>
-            </div>
-            <!-- End Features Item-->            
-
           </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center stats-item-macro">
+            <i class="bi bi-graph-up-arrow"></i>
+            <div class="stats-item">
+              <h3 class="stat-value">
+                <span class="stat-prefix">+</span>
+                <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <span class="stat-suffix">%</span>
+              </h3>
+              <p>Aumento de Engajamento</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center stats-item-macro">
+            <i class="bi bi-person-dash"></i>
+            <div class="stats-item">
+              <h3 class="stat-value">
+                <span class="stat-prefix">-</span>
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <span class="stat-suffix">%</span>
+              </h3>
+              <p>Menos Turnover</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center stats-item-macro">
+            <i class="bi bi-bar-chart-line"></i>
+            <div class="stats-item">
+              <h3 class="stat-value">
+                <span class="stat-prefix">+</span>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <span class="stat-suffix">%</span>
+              </h3>
+              <p>Aumento de Produtividade</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          <small class="stats-note">Indicadores médios após 90 dias* (varia por operação)</small>
         </div>
 
       </div>
 
     </section>
-    <!-- /Features Section -->
+    <!-- /Stats Section -->
 
-    <!-- Divider Section -->
-    <section id="" class="dark-background" style="padding: 1px;">
-      
-      <hr class="custom-divider">
-
-    </section>
-    <!-- /Divider Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section dark-background">
+    <!-- Details Section -->
+    <section id="features" class="details section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Plataforma inovadora</h2>
-        <p>Onde a cultura acontece</p>
+        <h2>DETALHES</h2>
+        <div><span>PRODUTO</span> <span class="description-title"></span></div>
       </div><!-- End Section Title -->
 
       <div class="container">
-        <div class="row gy-4">
 
-          <!-- Card Feed -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-house-door"></i></div>
-              <h3>Compartilhamento com propósito</h3>
-              <p>O Feed do EndoFlow é onde conquistas ganham visibilidade, comunicados são realmente vistos, e a cultura se constrói em tempo real.</p>
-            </div>
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/Feed.png" class="img-fluid" alt="">
           </div>
-
-          <!-- Card Canais -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-people"></i></div>
-              <h3>Grupos que realmente funcionam</h3>
-              <p>Crie canais por time, projeto ou interesse. Facilite a comunicação segmentada e empodere a colaboração com mais foco e autonomia.</p>
-            </div>
-          </div>
-
-          <!-- Card Lojinha -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-shop"></i></div>
-              <h3>Reconhecimento que vira recompensa</h3>
-              <p>A Lojinha transforma engajamento em valor real. Colaboradores trocam pontos por produtos, experiências e benefícios que fortalecem o senso de valorização.</p>
-            </div>
-          </div>
-
-          <!-- Card Pontuação -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-award"></i></div>
-              <h3>Cultura baseada em contribuição</h3>
-              <p>O sistema de pontuação reconhece quem faz a diferença. Ele premia atitudes alinhadas à cultura e reforça os comportamentos que constroem o time.</p>
-            </div>
-          </div>
-
-          <!-- Card Usuários -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-person"></i></div>
-              <h3>Perfil com propósito</h3>
-              <p>Cada colaborador tem um espaço personalizado para acompanhar sua jornada, interagir com colegas e enxergar seu impacto dentro da empresa.</p>
-            </div>
-          </div>
-
-          <!-- Card Notificações -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-bell"></i></div>
-              <h3>O que importa, na hora certa</h3>
-              <p>Notificações inteligentes mantêm todos atualizados com o que realmente importa — eventos, avisos e conquistas que constroem o dia a dia da cultura organizacional.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-- /Services Section -->
-
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
-      <img src="assets/img/cta-bg.jpg" alt="">
-
-      <div class="container">
-        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <h3>Veja o EndoFlow em ação</h3>
-              <p>Sua comunicação interna pode ser muito mais estratégica. Agende uma demonstração gratuita e descubra como o EndoFlow transforma cultura, engajamento e resultados — em poucos cliques.</p>
-              <a class="cta-btn" href="#contact">Quero ver como funciona</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /Call To Action Section -->
-
-    <!-- Stats Section -->
-    <!-- <section id="stats" class="stats section dark-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 align-items-center justify-content-between">
-
-          <div class="col-lg-5">
-            <img src="assets/img/stats-img.jpg" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-lg-6">
-
-            <h3 class="fw-bold fs-2 mb-3">Voluptatem dignissimos provident quasi</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+            <h3>O feed que coloca todo mundo na mesma página.</h3>
+            <p class="fst-italic">
+              Publicações internas com alcance real no operacional — com segmentação, interação e métricas para saber o
+              que foi visto, entendido e aplicado.
             </p>
-
-            <div class="row gy-4">
-
-              <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-emoji-smile flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-journal-richtext flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-headset flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-people flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
+            <ul>
+              <li><i class="bi bi-check"></i><span>Comunicação por setor, unidade, turno e tags</span></li>
+              <li><i class="bi bi-check"></i> <span>Curtidas, comentários e confirmações de leitura</span>
+              </li>
+              <li><i class="bi bi-check"></i> <span>Métricas de alcance e engajamento em tempo real</span></li>
+            </ul>
           </div>
+        </div><!-- Features Item -->
 
-        </div>
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/Canais.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Comunicação segmentada</h3>
+            <p class="fst-italic">
+              Crie canais e centralize conversas com foco, do operacional ao administrativo, tudo no mesmo lugar.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i><span>Canais públicos e privados</span></li>
+              <li><i class="bi bi-check"></i> <span>Conversas por tema, sem dispersão</span>
+              </li>
+              <li><i class="bi bi-check"></i> <span>Colaboração fluida entre áreas</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/Recompensa.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>Gamificação que move comportamento.</h3>
+            <p>Pontos, níveis e recompensas para transformar comunicação em ação, com regras e métricas.</p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Pontos por ações (ler, comentar, concluir)</span></li>
+              <li><i class="bi bi-check"></i><span>Rankings e reconhecimento por equipes</span>
+              </li>
+              <li><i class="bi bi-check"></i> <span>Recompensas e catálogo de benefícios</span>.
+              </li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-7 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/Portal.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-5 order-2 order-md-1" data-aos="fade-up">
+            <h3>Motor de Engajamento.</h3>
+            <p class="fst-italic">
+              Inteligência que transforma comunicação em rotina — com governança, segmentação e métricas.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Traduz a missão e prioridades da empresa em campanhas</span></li>
+              <li><i class="bi bi-check"></i> <span>Calendário de ações e cadência automática</span></li>
+              <li><i class="bi bi-check"></i> <span>Métricas de engajamento por área e unidade</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
 
       </div>
 
-    </section> -->
-    <!-- /Stats Section -->
+    </section><!-- /Details Section -->
 
     <!-- Testimonials Section -->
-    <!-- <section id="testimonials" class="testimonials section dark-background">
-
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+    <!-- <section id="testimonials" class="testimonials-saas-light section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
+        <div class="saas-heading">
+          <span class="saas-kicker">Depoimentos</span>
+          <h2>Quem já usa <span>Solução</span></h2>
+          <p>Feedback direto de operação, RH e SST.</p>
+        </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        <div class="saas-testimonials-grid">
+
+          <article class="saas-t-card">
+            <header class="saas-t-top">
+              <div class="saas-t-id">
+                <img class="saas-avatar" src="assets/img/testimonials/t1.png" alt="Depoente">
+                <img class="saas-avatar" src="assets/img/testimonials/te1.jpg" alt="Depoente">
+                <div class="saas-t-meta">
+                  <strong><u>Renata Scussiatto</u></strong>
+                  <strong>Diretora Administrativa | PerfilGraf</strong>
+                  <span>Indústria (RS)</span>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
               </div>
-            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="saas-stars" aria-label="5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </header>
+
+            <p class="saas-quote">
+              “As mensagens chegam com clareza e no timing certo. Diminuiu ruído e retrabalho.”
+            </p>
+
+            <footer class="saas-t-footer">
+              <span class="saas-tag"><i class="bi bi-lightning-charge"></i> Execução mais rápida</span>
+              <span class="saas-verified"><i class="bi bi-patch-check-fill"></i> Verificado</span>
+            </footer>
+          </article>
+
+          <article class="saas-t-card">
+            <header class="saas-t-top">
+              <div class="saas-t-id">
+                <img class="saas-avatar" src="assets/img/testimonials/t2.jpg" alt="Depoente">
+                <img class="saas-avatar" src="assets/img/testimonials/te2.jpg" alt="Depoente">
+
+                <div class="saas-t-meta">
+                  <strong><u>Braian Borba</u></strong>
+                  <strong>Sócio | MagnaData System</strong>
+                  <span>Varejo (Multiunidades)</span>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
               </div>
-            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="saas-stars" aria-label="5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </header>
+
+            <p class="saas-quote">
+              “Campanhas internas ganharam ritmo e adesão. A comunicação virou rotina.”
+            </p>
+
+            <footer class="saas-t-footer">
+              <span class="saas-tag"><i class="bi bi-people"></i> Mais engajamento</span>
+              <span class="saas-verified"><i class="bi bi-patch-check-fill"></i> Verificado</span>
+            </footer>
+          </article>
+
+          <article class="saas-t-card">
+            <header class="saas-t-top">
+              <div class="saas-t-id">
+                <img class="saas-avatar" src="assets/img/testimonials/testimonials-3.jpg" alt="Depoente">
+                <img class="saas-avatar" src="assets/img/testimonials/testimonials-3.jpg" alt="Depoente">
+                <div class="saas-t-meta">
+                  <strong><u>Dono de Alguma coisa</u></strong>
+                  <strong>????????</strong>
+                  <span>Logística</span>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
               </div>
-            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+              <div class="saas-stars" aria-label="5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-            </div>
+            </header>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
+            <p class="saas-quote">
+              “Alertas e orientações ficaram consistentes, com rastreabilidade e resposta.”
+            </p>
 
-          </div>
-          <div class="swiper-pagination"></div>
+            <footer class="saas-t-footer">
+              <span class="saas-tag"><i class="bi bi-shield-check"></i> Rotina contínua</span>
+              <span class="saas-verified"><i class="bi bi-patch-check-fill"></i> Verificado</span>
+            </footer>
+          </article>
+
         </div>
 
       </div>
-
     </section> -->
-    <!-- /Testimonials Section -->
 
-    
-    <!-- Team Section -->
-    <!-- <section id="team" class="team section dark-background"> -->
+    <section id="pricing" class="pricing-v2 section">
+      <div class="container" data-aos="fade-up">
 
-      <!-- Section Title -->
-      <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Por trás da mudança</h2>
-        <p>Liderança visionária</p>
-      </div> -->
+        <div class="section-header text-center">
+          <h2>Escolha seu plano</h2>
+          <p>Valores e condições sob consulta — receba a tabela completa no seu e-mail.</p>
+        </div>
 
-      <!-- <div class="container">
-        <div class="row gy-4 justify-content-center"> -->
+        <div class="pricing-grid">
 
-          <!-- Mailor -->
-          <!-- <div class="col-lg-5 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1-1.jpg" class="img-fluid" alt="Mailor Belusso Moterle">
-                <div class="social">
-                  <a href="https://www.linkedin.com/in/mailorbelussomoterle" target="_blank"><i class="bi bi-linkedin"></i></a>
-                  <a href="https://www.instagram.com/mailorbelusso/" target="_blank"><i class="bi bi-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Mailor Belusso Moterle</h4>
-                <span>Founder & CEO</span>
-                <p>Inovador nato, Mailor lidera a EndoFlow com uma missão clara: transformar a comunicação interna em um verdadeiro motor cultural. Ele acredita que equipes conectadas são o coração de empresas extraordinárias.</p>
-                <blockquote>
-                  "Minha missão é revolucionar a comunicação interna. Criar conexões reais, gerar pertencimento e construir culturas fortes. O EndoFlow é o caminho que escolhi para transformar esse propósito em realidade."
-                </blockquote>
-              </div>
-            </div>
-          </div> -->
+          <!-- Launch -->
+          <div class="pricing-card">
 
-          <!-- Micael -->
-          <!-- <div class="col-lg-5 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3-1.jpg" class="img-fluid" alt="Micael dos Santos">
-                <div class="social">
-                  <a href="https://br.linkedin.com/in/micael-dos-santos" target="_blank"><i class="bi bi-linkedin"></i></a>
-                  <a href="https://www.instagram.com/micaeldossanttos/" target="_blank"><i class="bi bi-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Micael dos Santos</h4>
-                <span>Co-Founder & CTO</span>
-                <p>Especialista em tecnologia e gestão de times, Micael acredita que inovação real nasce da escuta, da clareza e do propósito. Seu foco é criar soluções que fortaleçam o trabalho em equipe de forma simples e eficaz.</p>
-                <blockquote>
-                  "O que me move é conectar pessoas à missão da empresa. Quando todos entendem por que fazem parte, o impossível se torna alcançável. EndoFlow é propósito e performance."
-                </blockquote>
-              </div>
-            </div>
-          </div> -->
+            <div class="pricing-price quote">Essencial</div>
+            <div class="pricing-description">Até 150 usuários • 300 GB</div>
+            <p class="pricing-summary">Ideal para empresas iniciando a estruturação da comunicação interna.</p>
 
-        <!-- </div>
-      </div> -->
-    <!-- </section> -->
-    <!-- /Team Section -->
+            <ul class="pricing-features">
+              <li>App + Portal + TV corporativa</li>
+              <li>Módulos de postagens, canais e campanhas</li>
+              <li>IA opcional para posts culturais básicos e quizzes simples</li>
+            </ul>
 
-    <!-- Divider Section -->
-    <section id="" class="dark-background" style="padding: 1px;">
-      
-      <hr class="custom-divider">
-
-    </section>
-    <!-- /Divider Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="contact section dark-background">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Escolha seu plano</h2>
-        <p>Feito para o seu momento</p>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 dark-background text-center">
-
-          <!-- Plano: Free Trial -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0" style="background-color: #1a1733;">
-                <h5>Free Trial</h5>
-              </div>
-              <div class="text-center">
-                <h5 class="text-secondary">1 mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; 30 dias</li>
-                  <li>&#10003; Sem cartão de crédito</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Teste agora</a>
-              </div>
-            </div>
+            <a href="https://endoflow.com.br/register.html" class="btn-primary">Começar</a>
           </div>
 
-          <!-- Plano: Launch -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0"><h5>Launch</h5></div>
-              <div class="text-center">
-                <h5 class="text-secondary">/mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; Até 100 usuários</li>
-                  <li>&#10003; 250 GB armazenamento</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Assine agora</a>
-              </div>
-            </div>
+          <!-- Growth (Featured) -->
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Mais vendido</div>
+
+            <div class="pricing-price quote">Profissional</div>
+            <div class="pricing-description">Até 500 usuários • 1 TB</div>
+            <p class="pricing-summary">Equilíbrio ideal para empresas industriais e de serviços em expansão.</p>
+
+            <ul class="pricing-features">
+              <li>Todos os recursos do Basic</li>
+              <li>Motor de cultura com IA rodando diariamente</li>
+              <li>Campanhas culturais, quizzes e calendário estratégico</li>
+            </ul>
+
+            <a href="https://endoflow.com.br/register.html" class="btn-primary">Começar</a>
           </div>
 
-          <!-- Plano: Ignite -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0"><h5>Ignite</h5></div>
-              <div class="text-center">
-                <h5 class="text-secondary">/mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; Até 200 usuários</li>
-                  <li>&#10003; 500 GB armazenamento</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Assine agora</a>
-              </div>
-            </div>
+          <!-- Scale -->
+          <div class="pricing-card">
+
+            <div class="pricing-price quote">Avançado</div>
+            <div class="pricing-description">Até 1.000 usuários • 2,5 TB</div>
+            <p class="pricing-summary">Para grupos com múltiplas unidades, turnos e alta dispersão geográfica.</p>
+
+            <ul class="pricing-features">
+              <li>Todos os recursos do Pro</li>
+              <li>Segmentações avançadas de público e tags</li>
+              <li>Mais espaço de mídia (vídeos, carrosséis, TV em múltiplas plantas)</li>
+            </ul>
+
+            <a href="https://endoflow.com.br/register.html" class="btn-primary">Começar</a>
           </div>
 
-          <!-- Plano: Momentum -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0"><h5>Momentum</h5></div>
-              <div class="text-center">
-                <h5 class="text-secondary">/mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; Até 300 usuários</li>
-                  <li>&#10003; 750 GB armazenamento</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Assine agora</a>
-              </div>
-            </div>
-          </div>
+          <!-- Vision -->
+          <div class="pricing-card">
 
-          <!-- Plano: Growth -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="500">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0"><h5>Growth</h5></div>
-              <div class="text-center">
-                <h5 class="text-secondary">/mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; Até 500 usuários</li>
-                  <li>&#10003; 1.25 TB armazenamento</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Assine agora</a>
-              </div>
-            </div>
-          </div>
+            <div class="pricing-price quote">Estratégico</div>
+            <div class="pricing-description">Até 2.500 usuários • 6 TB</div>
+            <p class="pricing-summary">Para grupos empresariais, holdings e operações de grande porte.</p>
 
-          <!-- Plano: Scale -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="600">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0"><h5>Scale</h5></div>
-              <div class="text-center">
-                <h5 class="text-secondary">/mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; Até 750 usuários</li>
-                  <li>&#10003; 2 TB armazenamento</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Assine agora</a>
-              </div>
-            </div>
-          </div>
+            <ul class="pricing-features">
+              <li>Todos os recursos do Gold</li>
+              <li>SLAs dedicados e integrações sob medida</li>
+              <li>Governança centralizada com múltiplas empresas/unidades</li>
+            </ul>
 
-          <!-- Plano: Scale Max -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="700">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0"><h5>Scale Max</h5></div>
-              <div class="text-center">
-                <h5 class="text-secondary">/mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; Até 1.000 usuários</li>
-                  <li>&#10003; 2.5 TB armazenamento</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Assine agora</a>
-              </div>
-            </div>
+            <a href="https://endoflow.com.br/register.html" class="btn-primary">Começar</a>
           </div>
-
-          <!-- Plano: Vision -->
-          <div class="col-12 col-sm-6 col-md-3" data-aos="fade-up" data-aos-delay="800">
-            <div class="card text-light shadow-lg rounded-lg pt-3 pb-2" style="background-color: #1a1733;">
-              <div class="card-header text-center border-0"><h5>Vision</h5></div>
-              <div class="text-center">
-                <h5 class="text-secondary">/mês</h5>
-                <ul class="list-unstyled mt-3 text-start px-4">
-                  <li>&#10003; Até 2.500 usuários</li>
-                  <li>&#10003; 6 TB armazenamento</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center border-0">
-                <a href="register.html" class="btn btn-primary w-100" style="background-color: #7e6fff;">Assine agora</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Custom plan -->
-          <section id="call-to-action" class="call-to-action section dark-background" style="padding: 0px; padding-top: 50px;">
-            <div class="container">
-              <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-                <div class="col-xl-10">
-                  <div class="text-center">
-                    <h3>Precisa de um plano diferente?</h3>
-                    <p>Para planos customizados, entre em contato com a nossa equipe e criamos algo ideal para a sua empresa.</p>
-                    <a class="cta-btn" href="#contact">Entrar em contato</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- /Custom plan -->
 
         </div>
       </div>
     </section>
-    <!-- /Pricing Section -->
 
-    <!-- Divider Section -->
-    <section id="" class="dark-background" style="padding: 1px;">
-  
-      <hr class="custom-divider">
-
-    </section>
-    <!-- /Divider Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section dark-background">
+    <section id="contact" class="contact contact-v2 section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Fale com a gente</h2>
-        <p>Estamos prontos para ouvir</p>
-      </div>
-      <!-- End Section Title -->
+      <div class="container" data-aos="fade-up">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        
-        <div class="row gy-4">
+        <div class="section-header text-center">
+          <h2>Entre em contato</h2>
+
+          <p>
+            Fale com a <strong class="brand-highlight">EndoFlow</strong>.
+            Vamos responder o mais rápido possível.
+          </p>
+
+        </div>
+
+        <div class="row gy-5 align-items-start">
+
+          <!-- Infos -->
           <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
 
-               <a href="https://wa.me/5554994580152" target="_blank"
-                class="d-flex align-items-center text-decoration-none">
-                <i class="bi bi-whatsapp flex-shrink-0"></i>
-                <div>
-                  <h3>WhatsApp</h3>
-                  <p>Chamar no WhatsApp</p>
-                </div>
-              </a>
-
-              <!-- <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Telefone</h3>
-                <p>+55 54 9 9107-2302</p>
-              </div> -->
-            </div>
-            <!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email</h3>
-                <p>contato@endoflow.com.br</p>
+            <a href="tel:+5554994580152" class="contact-card d-flex align-items-center">
+              <div class="icon">
+                <i class="bi bi-telephone"></i>
               </div>
-            </div>
-            <!-- End Info Item -->
+              <div>
+                <h4>Telefone</h4>
+                <span>+55 54 99458-0152</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/5554994580152" target="_blank" class="contact-card d-flex align-items-center">
+              <div class="icon">
+                <i class="bi bi-whatsapp"></i>
+              </div>
+              <div>
+                <h4>WhatsApp</h4>
+                <span>Chamar no WhatsApp</span>
+              </div>
+            </a>
+
+            <a href="mailto://contato@endoflow.com.br" class="contact-card d-flex align-items-center">
+              <div class="icon">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <span>contato@endoflow.com.br</span>
+              </div>
+            </a>
+
           </div>
 
+          <!-- Formulário -->
           <div class="col-lg-8">
-            <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+
+            <form id="contactForm" class="php-email-form contact-form-v2">
+
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required="">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required>
                 </div>
 
                 <div class="col-md-6">
-                  <input type="email" id="email" name="email" class="form-control" placeholder="Seu email" required="">
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Seu email" required>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Assunto" required="">
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Assunto" required>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea id="message" name="message" class="form-control" rows="6" placeholder="Mensagem" required=""></textarea>
+                  <textarea name="message" id="message" rows="6" class="form-control" placeholder="Mensagem" required></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading" style="display: none;">Enviando...</div>
-                  <div class="sent-message" style="display: none; color: #28a745;">Sua mensagem foi enviada com sucesso!</div>
-                  <div class="error-message" style="display: none; color: #dc3545;">Erro ao enviar. Tente novamente.</div>
+                  <div class="loading">Enviando...</div>
+                  <div class="sent-message">Sua mensagem foi enviada com sucesso!</div>
+                  <div class="error-message">Erro ao enviar. Tente novamente.</div>
 
-                  <button style="color: white;" type="button" id="submitBtn">Enviar mensagem</button>
+                  <button id="submitBtn" type="submit" class="btn-primary">
+                    Enviar mensagem
+                  </button>
                 </div>
 
               </div>
             </form>
+
           </div>
-          <!-- End Contact Form -->
 
         </div>
-
       </div>
 
     </section>
-    <!-- /Contact Section -->
 
   </main>
 
   <footer id="footer" class="footer dark-background">
 
+    <svg class="footer-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <path id="footer-wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="fwave1">
+        <use xlink:href="#footer-wave-path" x="50" y="3"></use>
+      </g>
+      <g class="fwave2">
+        <use xlink:href="#footer-wave-path" x="50" y="0"></use>
+      </g>
+      <g class="fwave3">
+        <use xlink:href="#footer-wave-path" x="50" y="9"></use>
+      </g>
+    </svg>
+
     <div class="footer-top">
       <div class="container">
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center text-center text-lg-start">
           <div class="col-lg-3 col-md-6 footer-about">
             <a href="index.html" class="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt="">
+              <img src="assets/img/Logo&EscritaBrancaNoBackground.png" alt="">
             </a>
             <div class="footer-contact pt-3">
-              <!-- <p>A108 Adam Street</p> -->
-              <!-- <p>New York, NY 535022</p> -->
               <p>EndoFlow - Tecnologia e Comunicação</p>
               <p>61.195.310/0001-01</p>
             </div>
@@ -932,13 +585,11 @@
           </div>
 
           <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Links úteis</h4>
+            <h4>Links Úteis</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#about"> Sobre</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#features"> Benefícios</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#services"> Plataforma</a></li>
-              <!-- <li><i class="bi bi-chevron-right"></i> <a href="#team"> Equipe</a></li> -->
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Início</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#features"> Produto</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services"> Planos</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#contact"> Contato</a></li>
             </ul>
           </div>
@@ -946,9 +597,12 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Referências</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://portal.endoflow.com.br/terms-of-service"> Termos de serviço</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://portal.endoflow.com.br/terms-of-use"> Termos de uso</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://portal.endoflow.com.br/privacy-policy"> Política de privacidade</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://portal.endoflow.com.br/terms-of-service"> Termos
+                  de serviço</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://portal.endoflow.com.br/terms-of-use"> Termos de
+                  uso</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://portal.endoflow.com.br/privacy-policy"> Política
+                  de privacidade</a></li>
             </ul>
           </div>
 
@@ -959,7 +613,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -968,11 +623,9 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
@@ -996,7 +649,7 @@
       document.querySelector(".loading").style.display = "block";
 
       // Use fetch to send data to the endpoint
-      fetch("https://portal.endoflow.com.br/api/Contact", {
+      fetch("https://www.portal.endoflow.com.br/api/Contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
