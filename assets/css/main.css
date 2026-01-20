@@ -2267,7 +2267,7 @@ section,
 }
 
 /* ===== Override botão verde do template (Contact V2) ===== */
-.contact-v2 .php-email-form button[type=submit] {
+.contact-v2 button[type=submit] {
   background: #8b5cf6 !important;
   color: #ffffff !important;
   border-radius: 12px;
@@ -2278,13 +2278,13 @@ section,
   transition: all 0.3s ease;
 }
 
-.contact-v2 .php-email-form button[type=submit]:hover {
+.contact-v2 button[type=submit]:hover {
   background: #7c3aed !important;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(139, 92, 246, 0.45);
 }
 
-.contact-v2 .php-email-form button[type=submit] {
+.contact-v2 button[type=submit] {
   background: linear-gradient(135deg, #8b5cf6, #6366f1) !important;
 }
 
