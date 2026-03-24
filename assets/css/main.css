@@ -1116,6 +1116,273 @@ section,
 }
 
 /*--------------------------------------------------------------
+# SubHero Section
+--------------------------------------------------------------*/
+.subhero {
+  position: relative;
+  width: 100%;
+  padding: 90px 0 120px;
+  overflow: hidden;
+}
+
+.subhero-container,
+.subhero .subhero-media,
+.subhero .subhero-cta {
+  position: relative;
+  z-index: 2;
+}
+
+.subhero-content {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+.subhero-title {
+  margin: 0;
+  color: #0b1633;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.subhero-title-original {
+  max-width: 1320px;
+  margin: 0 auto 24px;
+  text-align: center;
+  font-size: 3vw;
+  line-height: 0.96;
+}
+
+.subhero-line {
+  display: block;
+}
+
+.subhero-highlight {
+  position: relative;
+  display: inline-block;
+  color: #7e6fff;
+  line-height: 1;
+}
+
+.subhero-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.03em;
+  height: 0.08em;
+  background: #7e6fff;
+  border-radius: 999px;
+  opacity: 0.95;
+}
+
+.subhero-media {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.subhero-banner-desktop,
+.subhero-banner-mobile {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+}
+
+.subhero-banner-desktop {
+  width: min(100%, 1700px);
+}
+
+.subhero-banner-mobile {
+  display: none;
+  width: min(92%, 760px);
+}
+
+.subhero-description {
+  margin: 30px auto 0;
+  max-width: 980px;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  text-align: center;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.subhero-cta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 28px auto 0;
+  width: 100%;
+}
+
+.subhero-cta .btn-get-started {
+  min-width: 280px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 14px 34px;
+  font-weight: 600;
+  box-shadow: 0 14px 35px rgba(139, 92, 246, 0.45);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.subhero-cta .btn-get-started:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(139, 92, 246, 0.55);
+}
+
+.subhero-cta .btn-watch-video {
+  gap: 10px;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.subhero-cta .btn-watch-video i {
+  font-size: 2rem;
+  line-height: 1;
+  color: #7e6fff;
+}
+
+.subhero-cta .btn-watch-video span {
+  white-space: nowrap;
+}
+
+/* Ondas */
+.subhero-waves {
+  display: block;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.subhero .wave1 use {
+  animation: move-forever1 10s linear infinite;
+  animation-delay: -2s;
+  fill: rgba(126, 111, 255, 0.35);
+  opacity: 0.6;
+}
+
+.subhero .wave2 use {
+  animation: move-forever2 8s linear infinite;
+  animation-delay: -2s;
+  fill: rgba(126, 111, 255, 0.55);
+  opacity: 0.4;
+}
+
+.subhero .wave3 use {
+  animation: move-forever3 6s linear infinite;
+  animation-delay: -2s;
+  fill: #7e6fff;
+  opacity: 0.5;
+}
+
+@media (max-width: 1199px) {
+  .subhero {
+    padding: 80px 0 110px;
+  }
+
+  .subhero-title-original {
+    font-size: 4vw;
+  }
+
+  .subhero-description {
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .subhero {
+    padding: 70px 0 100px;
+  }
+
+  .subhero-content {
+    margin-bottom: 28px;
+  }
+
+  .subhero-title-original {
+    font-size: clamp(2.2rem, 7vw, 4.3rem);
+    line-height: 0.98;
+    margin-bottom: 20px;
+  }
+
+  .subhero-description {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .subhero-banner-desktop {
+    display: none;
+  }
+
+  .subhero-banner-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .subhero {
+    padding: 60px 0 90px;
+  }
+
+  .subhero-title-original {
+    font-size: clamp(2rem, 9vw, 3.1rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  .subhero-highlight::after {
+    height: 0.075em;
+    bottom: 0.04em;
+  }
+
+  .subhero-description {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .subhero-banner-mobile {
+    width: 94%;
+  }
+
+  .subhero-cta {
+    gap: 16px;
+    margin-top: 24px;
+    flex-direction: column;
+  }
+
+  .subhero-cta .btn-get-started,
+  .subhero-cta .btn-watch-video {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .subhero-cta .btn-watch-video {
+    justify-content: center;
+  }
+
+  .subhero-waves {
+    height: 50px;
+  }
+}
+
+/*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
 .about {
@@ -1283,7 +1550,7 @@ section,
   z-index: 1;
 }
 
-.stats .stats-note{
+.stats .stats-note {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
@@ -1798,7 +2065,7 @@ section,
   box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
 }
 
-.pricing-v2 .pricing-card.featured:hover{
+.pricing-v2 .pricing-card.featured:hover {
   transform: translateY(-10px) scale(1.07);
   border-color: #8b5cf6;
   box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
@@ -1806,11 +2073,9 @@ section,
 
 .pricing-v2 .pricing-card.featured {
   border: 2px solid #8b5cf6;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(245, 243, 255, 0.9)
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(245, 243, 255, 0.9));
   transform: scale(1.05);
 }
 
@@ -1955,7 +2220,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 35%);
 }
 
-.pricing-v2 .pricing-card.featured .pricing-badge{
+.pricing-v2 .pricing-card.featured .pricing-badge {
   position: absolute;
   top: -14px;
   left: 50%;
@@ -1977,7 +2242,7 @@ section,
   text-transform: uppercase;
 
   box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
-  border: 1px solid rgba(255,255,255,0.55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   white-space: nowrap;
 }
 
@@ -2509,7 +2774,7 @@ section,
   .navmenu .nav-cta {
     width: 100%;
     margin-left: 0;
-    
+
     justify-content: center;
   }
 
@@ -2520,9 +2785,10 @@ section,
   }
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
+
   .navmenu .btn-nav-login,
-  .navmenu .btn-nav-cta{
+  .navmenu .btn-nav-cta {
     min-width: 160px;
   }
 }
